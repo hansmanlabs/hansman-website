@@ -9,15 +9,18 @@ export function SiteHeader() {
           {site.name}
         </Link>
 
-        <div className="flex items-center gap-8">
+        <nav aria-label="Main" className="flex items-center gap-5 sm:gap-8">
           <p className="hidden items-center gap-3 text-sm text-muted sm:flex">
             <span className="status-dot" aria-hidden="true" />
             Currently building
           </p>
+          <a href="#services" className="link inline-flex min-h-11 items-center text-sm font-medium">
+            Services
+          </a>
           <a href={mailto} className="link inline-flex min-h-11 items-center text-sm font-medium">
             Contact
           </a>
-        </div>
+        </nav>
       </div>
     </header>
   );

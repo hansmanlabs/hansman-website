@@ -5,9 +5,9 @@
 export const site = {
   name: "Hansman Labs",
   url: "https://hansmanlabs.com",
-  title: "Hansman Labs — Practical software, thoughtfully built",
+  title: "Hansman Labs · Practical software, thoughtfully built",
   description:
-    "An independent software lab building practical tools that simplify everyday work and give people more time for what matters.",
+    "Hansman Labs builds practical software and helps businesses make their websites and apps safer, easier to use, and better at converting.",
   tagline: "Thoughtfully built. Purposefully useful.",
   established: 2026,
   email: "hello@hansmanlabs.com",
@@ -15,7 +15,26 @@ export const site = {
   github: "https://github.com/hansmanlabs" as string | null,
 } as const;
 
-export const mailto = `mailto:${site.email}?subject=${encodeURIComponent("Hello, Hansman Labs")}`;
+const mailtoWith = (subject: string) => `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
+
+export const mailto = mailtoWith("Hello, Hansman Labs");
+export const mailtoAudit = mailtoWith("Audit request");
+export const mailtoProject = mailtoWith("Project inquiry");
+
+export const auditAreas = [
+  {
+    title: "Security fundamentals",
+    body: "Exposed secrets, authentication, authorization, input validation, dependencies, and how personal and business data is handled.",
+  },
+  {
+    title: "UI/UX and web design",
+    body: "Navigation, typography, spacing, responsive layouts, accessibility, and whether people can find their way to what they came for.",
+  },
+  {
+    title: "Conversion rate optimization",
+    body: "Messaging, calls to action, forms, trust signals, and the points of friction that stop people from getting in touch or buying.",
+  },
+] as const;
 
 export const focusAreas = [
   {
